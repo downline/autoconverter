@@ -1,6 +1,6 @@
 # Download in release!
 
-What this program does? It converts .mp3 to .ogg and adds fadein+fadeout automatically, along with getting time in a file name(needed so dynamo can play it). But it doesnt cut to "right parts", no. I havent yet learned neural networks to do such advanced things.
+What this program does? It converts .mp3 to .ogg and adds fadein+fadeout automatically, along with writing time in a file name(needed so dynamo can play it). But it doesnt cut to "right parts", no. I havent yet learned neural networks to do such advanced things.
 
 
 In case of:
