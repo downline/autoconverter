@@ -1,24 +1,31 @@
 from pydub import AudioSegment
 from math import ceil
-xd = 1
-while xd == 1:
-    try:
-        fl = input("Name of your song: ")
-        fxt = "songs/" + fl + ".mp3" 
+import glob
 
-        sng = AudioSegment.from_file(fxt)
-        sfd = sng.fade_in(8000).fade_out(8000)
+songlist = [f for f in glob.glob("songs/*.mp3")]
+
+i = 0
+while i < len(songlist):
+    try:
+        songfile = songlist[i]
+        songfileformatted = songfile.replace('\\', '/')
+        song = AudioSegment.from_file(songfileformatted)
+        songfaded = song.fade_in(7000).fade_out(7000)
         
-        sfd.duration_seconds == (len(sfd) / 1000.0) 
-        cld = ceil(sfd.duration_seconds)
+        songfaded.duration_seconds == (len(song) / 1000.0) 
+        songduration = ceil(songfaded.duration_seconds)
+        print("Duration(SEC): ", songduration)
         
-        flwtdt = fl.replace('.', '')
+        songname0 = songfileformatted.replace("songs/", "")
+        songname1 = songname0.replace(".mp3", "")
+        songname2 = songname1.replace(".", "")
+        songname3 = songname2 + " _" + str(songduration) + ".ogg"
+        songpathname = "converted_songs/" + songname3
         
-        flnm = "converted_songs/" + flwtdt + " _" + str(cld) + ".ogg"
-        sfd.export(flnm, format='ogg')
-        
-        print(flnm, "has been created! \n")
-        
+        print("Path and name: ", songpathname)
+        songfaded.export(songpathname, format="ogg")
+        print("Converted, doing the next one.")
+        i += 1
     except Exception as e:
-        print("You fucked up the path, didnt you?: ", e)
-        
+        print("Oopsie, something bad happened!", e)
+
