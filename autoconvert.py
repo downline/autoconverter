@@ -9,9 +9,9 @@ while i < len(songlist):
         file = songlist[i].replace('\\', '/')
         song = AudioSegment.from_file(file)
         editedsong = song.fade_in(7000).fade_out(7000).set_frame_rate(44100)
-        editedsongduration = ceil((len(editedsong) / 1000.0))
+        editedsongduration = str(ceil((len(editedsong) / 1000.0))).zfill(3)
         oldfilename = file.replace("songs/", "").replace(".mp3", "").replace(".", "").replace(",", "")
-        filename = oldfilename + " _" + str(editedsongduration) + ".ogg"
+        filename = oldfilename + " _" + editedsongduration + ".ogg"
         filepath = "converted_songs/" + filename
         print("Converting: ", filename)
         editedsong.export(filepath, format="ogg")
@@ -23,3 +23,4 @@ while i < len(songlist):
     except Exception as e:
         print("Wow, something broke: ", e)
         input()
+
