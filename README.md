@@ -1,7 +1,7 @@
 # Download in release!
 
 What this program does?
-It converts MP3 to OGG, adds fadein & fadeout, writes song duration to a file name, formats the name of your file so it's compatible with Dynamo, and does that fully automatically! Just put your songs in "songs" directory and run the script, they should come out done in "converted_songs".
+It converts MP3(not only, check .py) to OGG, adds fadein & fadeout, writes song duration to a file name, formats the name of your file so it's compatible with Dynamo, and does that fully automatically! Just put your songs in "songs" directory and run the script, they should come out done in "converted_songs".
 
 
 In case of:
