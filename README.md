@@ -7,13 +7,8 @@ What it does?
 3) Format file name of your song, in order for it to be compatible with the mod.
 4) Export the result in OGG.
 
-You can use the outdated(for now) version of autoconverter.exe, which requires no installation at all.
-Or you can use the most up to date version, which is called autoconverteralpha.py. For the python file you must install python itself and pydub:
-1) Install python, add it to your path by checking "add to path" box.
-2) Open up cmd, type: "pip install pydub".
-3) Download release, unpack it.
-4) Drop dem songs in the "songs" folder, run autoconverteralpha.py, wait until the console closes, check your songs
-5) ???
-6) Profit, you can now do whatever you want with it. However, it's meant for easier dynamo pack making, so... yea.
+Requirements:
+1) Python (must be added in path)
+2) Pydub (pip install pydub)
 
 
